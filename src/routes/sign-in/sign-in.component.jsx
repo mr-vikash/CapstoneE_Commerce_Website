@@ -6,7 +6,6 @@ import {
  '../../utils/firebase/firebase.utils'
 const SignIn = () =>
 {
-   
     const logGoogleUser = async ()=>
     {
         const {user} = await signInWithGooglePopup();
