@@ -13,7 +13,6 @@ const SignIn = () =>
         const userDocRef = await createUserDocumentFromAuth(user);
     }
 
-   
     return(
         <div>
              <h1>I am Sign In Page</h1>
