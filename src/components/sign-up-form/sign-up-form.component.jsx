@@ -93,4 +93,4 @@ const SignUpForm = () => {
     </div>
   )
 }
-export default SignUpForm
+export default SignUpForm;
