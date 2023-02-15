@@ -9,27 +9,28 @@ import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import CheckOut from '../../routes/checkout/checkout.component';
 
-const CartDropdown = () =>
-{
-  const {cartItems} = useContext(CartContext);
+const CartDropdown = () => {
+  const { cartItems } = useContext(CartContext);
 
   const navigate = useNavigate();
 
 
-  const gotoCheckOutHandler = ()=>
-  {
+  const gotoCheckOutHandler = () => {
     navigate('/checkout');
   }
-    return(
-       <div className="cart-dropdown-container">
-        <div className="cart-items">
-
-          {cartItems.map((item)=>(
-          <CartItem key={item.id} cartItem={item}/>
-          ))}
-        </div>
-         <Button buttontype='inverted' onClick={gotoCheckOutHandler}>CHECKOUT</Button>
-       </div>
-    )
+  return (
+    <div className="cart-dropdown-container">
+      <div className="cart-items">
+        {cartItems.length ? cartItems.map((item) => (
+          <CartItem key={item.id} cartItem={item} />
+        )) : (
+          <span>
+            Your cart is Empty
+          </span>
+        )}
+      </div>
+      <Button buttontype='inverted' onClick={gotoCheckOutHandler}>CHECKOUT</Button>
+    </div>
+  )
 };
 export default CartDropdown;
